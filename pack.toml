@@ -1,12 +1,12 @@
 name = "Garter Client"
 author = "Justin Garter"
-version = "1.2.1"
+version = "1.2.2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "fdc4a2e91374a059f87b5ba0c578e6c02b96dd79f61162460869eae754c049cb"
+hash = "ef56d3b600b2984a3df787e450087f56b03403aa5090414c68a5b37d3113a2a3"
 
 [versions]
 fabric = "0.19.5"
