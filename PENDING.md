@@ -72,17 +72,30 @@ working combination and succeeded after config was synced from the previous vers
 Every successful load also logs `Unexpected; somehow the Opaque + Translucent pass
 ran with shaders on` from DH. Watch for artifacts at the LOD boundary.
 
-## Requires a discrete GPU
+## Distant Horizons and shaders: NVIDIA driver dependent
 
-Distant Horizons' shader programs only compile on the NVIDIA cards tested.
-On a laptop running the integrated AMD GPU, every shaderpack fails with
-`dh_terrain.fsh` / `dh_water.fsh` syntax errors at line 51 and Iris falls back
-to vanilla rendering.
+Iris builds the DH shader programs from the active shaderpack. On some NVIDIA
+drivers this fails and Iris silently disables the shaderpack.
 
-Windows forces the integrated GPU when a laptop is on battery. If shaders stop
-working on a laptop, check the log for the render device before anything else:
+| GPU | Driver | DH + shaders |
+|---|---|---|
+| RTX 5070 desktop | 610.88 | works |
+| RTX 3060 laptop | 616.56 | fails |
+| RTX 3060 laptop | 616.92, before reboot | fails |
+| RTX 3060 laptop | 616.92, after reboot | works |
 
-    Select-String -Path "<instance>\minecraft\logs\latest.log" -Pattern "OpenGL Renderer"
+616.56 is the broken one. 616.92 fixes it, but the machine must be rebooted.
+Before the reboot the log already reports the new version while the old driver
+is still resident, so the version string alone does not prove the update took.
 
-Fix: plug in, and set Prism's javaw.exe to High performance under
-Settings, System, Display, Graphics.
+Failure looks like: dh_terrain.fsh or dh_water.fsh, `0(51) : error C0000: syntax
+error, unexpected '=' expecting "::"`, sometimes with `undefined variable
+irisInt_Fog`. Iris logs "Failed to create shader rendering pipeline, disabling
+shaders!", prints one chat message at world load, then renders vanilla.
+
+    Select-String -Path "<instance>\minecraft\logs\latest.log" -Pattern "Failed to create shader"
+
+If a machine fails, update the NVIDIA driver and reboot before touching the pack.
+
+Separately: on a laptop, Windows uses the integrated GPU on battery, which breaks
+DH shaders for a different reason. Check "OpenGL Renderer" in the log first.
