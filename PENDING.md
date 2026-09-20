@@ -34,3 +34,9 @@ Check them after any `packwiz migrate` by re-running this list.
 | borderless-mining | Abandoned 2023, superseded by cubes-without-borders |
 | photon-shader | No 26.2 or 26.3 build |
 | chloride | Duplicate Sodium fullscreen_mode override, crashes with cubes-without-borders |
+
+## Removed for compatibility, not availability
+
+| slug | reason |
+|---|---|
+| distanthorizons | 26.3: Iris'' DH compat shader `dh_terrain.fsh` fails to compile (`error C0000: syntax error, unexpected ''=''` at line 51). Iris falls back to vanilla rendering and silently disables the shaderpack. Also leaves world gen threads blocked on exit, triggering the client shutdown watchdog. Confirmed by removing the jar: shaders compile fine without it. Re-test after Iris or DH ship 26.3 fixes. |
