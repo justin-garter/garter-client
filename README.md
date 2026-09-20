@@ -1,4 +1,4 @@
-﻿# Garter Client
+# Garter Client
 
 Portable client-side Minecraft modpack, managed with [packwiz](https://packwiz.infra.link/).
 Performance, visual and quality-of-life mods. Safe on vanilla servers.
@@ -20,7 +20,7 @@ Carried forward across Minecraft versions rather than rebuilt each time.
 
 | Tool | Version | Install |
 |---|---|---|
-| Go | 1.27+ | `winget install GolLang.Go` |
+| Go | 1.27+ | `winget install GoLang.Go` |
 | git | 2.55+ | `winget install Git.Git` |
 | packwiz | `v0.0.0-20260906154125-ef87d964f8cb` | `go install github.com/packwiz/packwiz@latest` |
 | Prism Launcher | 11.x | `winget install PrismLauncher.PrismLauncher` |
