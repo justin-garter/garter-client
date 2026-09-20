@@ -46,11 +46,6 @@ hash = "89b9af3f0f96e88b96a2bacf331ecc8e08b9cc915524135494241b368714c359"
 metafile = true
 
 [[files]]
-file = "mods/chloride.pw.toml"
-hash = "37e11b6189a9e299503493d99e790378e3263a253da8e52cb22f42676efbd769"
-metafile = true
-
-[[files]]
 file = "mods/chunks-fade-in.pw.toml"
 hash = "40a30aa0687e22fb46b3ae98c88b93a8ee0e847a2a9815d061bd652c14e1cc1d"
 metafile = true
