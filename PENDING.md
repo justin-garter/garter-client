@@ -1,4 +1,4 @@
-﻿# Pending re-add
+# Pending re-add
 
 Entries removed when migrating to a Minecraft version because no compatible
 build existed yet. Re-add with `packwiz modrinth add <slug>` once they port.

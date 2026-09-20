@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   Migrate the pack to a new Minecraft version and report what did and did not port.
 .EXAMPLE

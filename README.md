@@ -1,4 +1,4 @@
-# Garter Client
+# SchmoeClient
 
 Portable client-side Minecraft modpack, managed with [packwiz](https://packwiz.infra.link/).
 Performance, visual and quality-of-life mods. Safe on vanilla servers.
@@ -19,7 +19,7 @@ Carried forward across Minecraft versions rather than rebuilt each time.
 ## Just want to play it
 
 1. Install [Prism Launcher](https://prismlauncher.org/)
-2. Download the latest `.mrpack` from [Releases](https://github.com/justin-garter/garter-client/releases)
+2. Download the latest `.mrpack` from [Releases](https://github.com/justin-garter/mc-client-modpack/releases)
 3. Prism: Add Instance, Import, select that file
 4. Settings, Memory: 4096 min, 6144 max (8192 if you have 32 GB)
 5. Launch
@@ -80,7 +80,7 @@ Then, by hand:
 1. `packwiz remove <slug>` for anything with no build. Record it in PENDING.md.
 2. Re-add anything from PENDING.md that now has a build.
 3. Bump the version in pack.toml.
-4. `packwiz refresh` and `packwiz modrinth export -o "out\GarterClient-<ver>.mrpack"`
+4. `packwiz refresh` and `packwiz modrinth export -o "out\SchmoeClient-<ver>.mrpack"`
 5. Import into Prism as a NEW instance. Keep the old one until the new one works.
 6. Launch. Check the log (see below).
 7. Merge to main, tag `vX.Y.Z-mcNN.N`, push.
@@ -148,3 +148,5 @@ Check that section before removing anything that looks redundant.
 | `v1.1.1-mc26.3` | 26.3 | DH removed, shaders working |
 | `v1.2.0-mc26.3` | 26.3 | DH restored with shaderpack constraint documented |
 | `v1.2.1-mc26.3` | 26.3 | Client defaults ship in the pack, repo files excluded |
+| `v1.2.2-mc26.3` | 26.3 | Ships the incompatible-pack acknowledgement so New Glowing Ores loads |
+| `v1.3.0-mc26.3` | 26.3 | Pack renamed to SchmoeClient, repo renamed to mc-client-modpack |

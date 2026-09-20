@@ -1,8 +1,8 @@
-﻿<#
+<#
 .SYNOPSIS
   Copy Minecraft options and mod configs between two Prism Launcher instances.
 .EXAMPLE
-  .\scripts\sync-instance-config.ps1 -FromInstance "GarterClient-1.0.0-mc26.2" -ToInstance "Garter Client 26.3"
+  .\scripts\sync-instance-config.ps1 -FromInstance "SchmoeClient-1.0.0-mc26.2" -ToInstance "SchmoeClient 26.3"
 #>
 param(
     [Parameter(Mandatory)][string]$FromInstance,

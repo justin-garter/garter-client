@@ -5,7 +5,7 @@
   Only settings that should travel between machines. Video settings, memory and
   Sodium tuning are per machine and are deliberately not touched.
 .EXAMPLE
-  .\scripts\apply-client-defaults.ps1 -Instance "GarterClient-1.2.0-mc26.3"
+  .\scripts\apply-client-defaults.ps1 -Instance "SchmoeClient-1.2.0-mc26.3"
 #>
 param(
     [Parameter(Mandatory)][string]$Instance
