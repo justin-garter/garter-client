@@ -3,7 +3,7 @@
 Entries removed when migrating to a Minecraft version because no compatible
 build existed yet. Re-add with `packwiz modrinth add <slug>` once they port.
 
-Check them after any `packwiz migrate` by re-running this list.
+`scripts\bump-version.ps1` prints these as re-test commands on every migration.
 
 ## Removed at 26.3 (2026-09-20)
 
@@ -21,7 +21,7 @@ Check them after any `packwiz migrate` by re-running this list.
 | cherished-worlds | Cherished Worlds |
 | visuality | Visuality |
 | spawn-animations | Spawn Animations |
-| better-leaves | Motschen's Better Leaves |
+| better-leaves | Motschens Better Leaves |
 | bsl-shaders | BSL Shaders |
 | solas-shader | Solas Shader |
 
@@ -35,8 +35,39 @@ Check them after any `packwiz migrate` by re-running this list.
 | photon-shader | No 26.2 or 26.3 build |
 | chloride | Duplicate Sodium fullscreen_mode override, crashes with cubes-without-borders |
 
-## Removed for compatibility, not availability
+# Constraints
 
-| slug | reason |
+Couplings between entries that are not expressed in pack.toml. Breaking one of
+these does not crash the game, it silently degrades it. Re-verify after any
+version bump.
+
+## 26.3: Distant Horizons requires Complementary Reimagined + Euphoria Patches
+
+With Distant Horizons installed on 26.3, Iris builds DH LOD shader programs from
+the active shaderpack. Only one combination compiles.
+
+| shaderpack | result |
 |---|---|
-| distanthorizons | 26.3: Iris'' DH compat shader `dh_terrain.fsh` fails to compile (`error C0000: syntax error, unexpected ''=''` at line 51). Iris falls back to vanilla rendering and silently disables the shaderpack. Also leaves world gen threads blocked on exit, triggering the client shutdown watchdog. Confirmed by removing the jar: shaders compile fine without it. Re-test after Iris or DH ship 26.3 fixes. |
+| ComplementaryReimagined + EuphoriaPatches | compiles |
+| ComplementaryReimagined (plain) | dh_water.fsh fails |
+| ComplementaryUnbound + EuphoriaPatches | dh_terrain.fsh fails |
+| ComplementaryUnbound (plain) | dh_terrain.fsh fails |
+| Bliss | dh_terrain.fsh fails |
+
+Error: `dh_terrain.fsh: 0(51) : error C0000: syntax error, unexpected = expecting ::`
+
+Failure mode is silent. Iris logs `Failed to create shader rendering pipeline,
+disabling shaders!`, prints one chat message at world load, then renders vanilla.
+The game does not crash and looks normal at a glance.
+
+To verify after any change:
+
+    $log = "$env:APPDATA\PrismLauncher\instances\<instance>\minecraft\logs\latest.log"
+    Select-String -Path $log -Pattern "Failed to create shader|ShaderCompileException"
+
+No output means shaders are compiling.
+
+Known unexplained: the first launch of a freshly imported instance failed with the
+working combination and succeeded after config was synced from the previous version.
+Every successful load also logs `Unexpected; somehow the Opaque + Translucent pass
+ran with shaders on` from DH. Watch for artifacts at the LOD boundary.
