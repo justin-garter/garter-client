@@ -60,6 +60,11 @@ hash = "3aa23ce022b390ab4dcace719e92cf3a416b073ef0ef7338779d3821a75f8701"
 metafile = true
 
 [[files]]
+file = "mods/distanthorizons.pw.toml"
+hash = "9c887daa725d583abd5b3d41fdbe3aa3e07c74f2e5d99eeb1b7e94fc3382e5fb"
+metafile = true
+
+[[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "84d6a2b87db74408c8fd2fd15792bad981ffbab43e1ee96b79aabded2604141c"
 metafile = true
@@ -272,6 +277,10 @@ metafile = true
 file = "resourcepacks/round-trees.pw.toml"
 hash = "af2948a9f6bcb534ecdf748fb0a6f1354602c0507ccce6f31e5b3ec6398edf22"
 metafile = true
+
+[[files]]
+file = "scripts/bump-version.ps1"
+hash = "93e0a34022dd7e1a8903f46c90e05fce35e869267eb326ee19a8261178937ce5"
 
 [[files]]
 file = "scripts/sync-instance-config.ps1"
