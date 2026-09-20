@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "PENDING.md"
+hash = "15f779aedc682a06c743494a02e8f36bdd387bd11bcd54540e77d7c453eb63f2"
+
+[[files]]
 file = "mods/3dskinlayers.pw.toml"
 hash = "d948339327bc53e47c9133f0ec00db69d37a804d1bd35de20421344cdc6df94b"
 metafile = true
