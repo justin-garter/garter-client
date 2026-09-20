@@ -1,12 +1,12 @@
 name = "SchmoeClient"
 author = "Justin Garter"
-version = "1.3.0"
+version = "1.4.0"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "ef56d3b600b2984a3df787e450087f56b03403aa5090414c68a5b37d3113a2a3"
+hash = "ce73056979f972c1b1f5515399796d15aaf107f81ab042344e0de6454a5e2bc4"
 
 [versions]
 fabric = "0.19.5"
