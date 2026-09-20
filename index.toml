@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "PENDING.md"
-hash = "9d795529d90569a254d779b1a41b75a63304a444166a40a17727327f21da6adf"
+hash = "d92adc83e80451dd81411af2c8ec771af9bcbba4a599867ff29cb8e2140cd348"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
