@@ -1,0 +1,4 @@
+﻿# packwiz writes LF and records a hash of every metafile in index.toml.
+# Git converting LF to CRLF on checkout changes those hashes, which makes
+# `packwiz refresh` rewrite the index on every machine that clones this.
+* -text
