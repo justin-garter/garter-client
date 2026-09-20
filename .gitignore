@@ -1,0 +1,7 @@
+﻿# packwiz exports
+/out/
+*.mrpack
+
+# Windows
+Thumbs.db
+desktop.ini
