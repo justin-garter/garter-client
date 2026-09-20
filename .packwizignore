@@ -1,0 +1,9 @@
+# Repo files, not pack content. Keep these out of players' game folders.
+README.md
+PENDING.md
+.gitignore
+.gitattributes
+.packwizignore
+scripts/
+client-defaults/
+out/

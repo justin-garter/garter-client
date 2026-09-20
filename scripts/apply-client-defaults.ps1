@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   Apply portable client defaults (resource pack order, shaderpack) to a Prism instance.
 .DESCRIPTION
@@ -39,7 +39,7 @@ if ($lines -match "^resourcePacks:") {
 } else {
     $lines += $want
 }
-Set-Content -Path $optionsPath -Value $lines -Encoding utf8
+[System.IO.File]::WriteAllText($optionsPath, (($lines -join "`n") + "`n"))
 Write-Host "Applied resource pack order" -ForegroundColor Green
 
 if (Test-Path "client-defaults\iris.properties") {

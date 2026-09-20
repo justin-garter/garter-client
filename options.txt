@@ -1,0 +1,2 @@
+resourcePacks:["vanilla","continuity:default","continuity:glass_pane_culling_fix","file/LowOnFire v26.2§8.zip","file/NewGlowingOres-§6[Border]§r.zip","file/Round-Trees-8.4.zip","file/Os\u0027 Colorful Grasses (Mix).zip","file/FreshAnimations_v1.10.5.zip","file/FA+Player-v1.1.zip","file/FA+All_Extensions-v1.9.2.zip","file/Fast Better Grass.zip"]
+incompatibleResourcePacks:[]
