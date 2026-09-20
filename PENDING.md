@@ -71,3 +71,18 @@ Known unexplained: the first launch of a freshly imported instance failed with t
 working combination and succeeded after config was synced from the previous version.
 Every successful load also logs `Unexpected; somehow the Opaque + Translucent pass
 ran with shaders on` from DH. Watch for artifacts at the LOD boundary.
+
+## Requires a discrete GPU
+
+Distant Horizons' shader programs only compile on the NVIDIA cards tested.
+On a laptop running the integrated AMD GPU, every shaderpack fails with
+`dh_terrain.fsh` / `dh_water.fsh` syntax errors at line 51 and Iris falls back
+to vanilla rendering.
+
+Windows forces the integrated GPU when a laptop is on battery. If shaders stop
+working on a laptop, check the log for the render device before anything else:
+
+    Select-String -Path "<instance>\minecraft\logs\latest.log" -Pattern "OpenGL Renderer"
+
+Fix: plug in, and set Prism's javaw.exe to High performance under
+Settings, System, Display, Graphics.
