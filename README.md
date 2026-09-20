@@ -29,6 +29,9 @@ configure after import.
 
 Do not change the shaderpack. See Constraints below.
 
+If the world looks like plain vanilla with no shadows, update your NVIDIA
+drivers and reboot.
+
 ## Layout
 
     pack.toml         pack name, MC version, loader version
